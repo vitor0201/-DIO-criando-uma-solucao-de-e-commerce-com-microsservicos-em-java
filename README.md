@@ -10,7 +10,7 @@ Meu perfil na DIO:
 
 Foi necessário realizar um downgrade da versão estável do Spring Boot (2.5.6) e do Kafka para conseguir rodar o projeto conforme as aulas, adicionar o repositório (https://packages.confluent.io/maven/)
 
-```yaml
+```groovy
 plugins {
     id "com.github.davidmc24.gradle.plugin.avro" version "1.2.0"
     id 'org.springframework.boot' version '2.3.1.RELEASE'
@@ -21,13 +21,12 @@ plugins {
 
 `
 
-```yaml
+```groovy
 dependencies {
 
 // ...
-
-implementation group: 'io.confluent', name: 'kafka-avro-serializer', version: '5.5.0'
-implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation "org.apache.avro:avro:1.10.1"
+	implementation group: 'io.confluent', name: 'kafka-avro-serializer', version: '5.5.0'
 ```
 
 Também foi acrescentado duas bibliotecas a mais para auxiliar (Spring DevTools e Spring Actuator )
@@ -52,4 +51,5 @@ Além do mais foi necessário algumas alterações no Docker (schema-registry)
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'PLAINTEXT://broker:29092'
       SCHEMA_REGISTRY_DEBUG: true 
 ```
+
 
