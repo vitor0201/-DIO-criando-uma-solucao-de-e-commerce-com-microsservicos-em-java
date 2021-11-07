@@ -4,7 +4,7 @@ Projeto original: https://github.com/hatanakadaniel/ecommerce-checkout-api
 
 Aulas do projeto:  https://web.dio.me/project/criando-uma-solucao-de-e-commerce-com-microsservicos-em-java/learning/506c1caf-2543-42cf-91f7-f4e28f2657ab?back=/track/capgemini-fullstack-java-and-angular
 
-Meu perfil na DIO: 
+Meu perfil na DIO: https://web.dio.me/users/vitorrodrigues0201?tab=achievements
 
 ##### Implementação
 
@@ -26,7 +26,7 @@ dependencies {
 
 // ...
     implementation "org.apache.avro:avro:1.10.1"
-	implementation group: 'io.confluent', name: 'kafka-avro-serializer', version: '5.5.0'
+    implementation group: 'io.confluent', name: 'kafka-avro-serializer', version: '5.5.0'
 ```
 
 Também foi acrescentado duas bibliotecas a mais para auxiliar (Spring DevTools e Spring Actuator )
