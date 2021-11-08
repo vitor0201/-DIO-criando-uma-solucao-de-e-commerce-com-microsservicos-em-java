@@ -53,3 +53,23 @@ Além do mais foi necessário algumas alterações no Docker (schema-registry)
 ```
 
 
+
+Nas últimas aulas o professor não corrige o erro do programa, mas para isso deve-se fazer a alteração seguinte no *application.yml* da payment-API
+
+
+
+```yaml
+  bindings:
+    checkout-created-input:
+      destination: streaming.ecommerce.checkout.created
+      contentType: application/*+avro
+      group: ${spring.application.name}
+      consumer:
+        use-native-decoding: true //mudar aqui
+    payment-paid-output:
+      destination: streaming.ecommerce.payment.paid
+      contentType: application/*+avro
+      producer:
+        use-native-encoding: true //mudar aqui
+```
+
